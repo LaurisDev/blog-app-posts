@@ -77,7 +77,7 @@ class TestApp(unittest.TestCase):
         mock_collection.find_one_and_update.return_value = None
         response = self.app.put('/posts/60458fb603c395f9a81c9f4a', data=json.dumps({}), content_type='application/json')
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 404)
 
     @patch('app.collection')
     def test_delete_post(self, mock_collection):
